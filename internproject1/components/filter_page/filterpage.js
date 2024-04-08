@@ -8,8 +8,10 @@ import {
   TouchableOpacity,
   ScrollViewComponent,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 export const FilterPage = () => {
+  const navigation = useNavigation();
   const [pressed_vegetarian, setpressed_vegetarian] = useState(false);
   const [pressed_nonvegetarian, setpressed_nonvegetarian] = useState(false);
   const [pressed_vegan, setpressed_vegan] = useState(false);
@@ -96,11 +98,11 @@ export const FilterPage = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.applyButtonContainer}>
-        <TouchableOpacity
-        style={styles.cancelbutton}>
+          <TouchableOpacity style={styles.cancelbutton}
+          onPress={()=>navigation.navigate('Main')}>
             <Text style={styles.canceltext}>Cancel</Text>
           </TouchableOpacity>
-        
+
           <TouchableOpacity
             style={styles.applyButton}
             onPress={handleApplyFilter}>
@@ -153,25 +155,23 @@ const styles = StyleSheet.create({
   applyButtonContainer: {
     flex: 1,
     position: 'absolute',
-    bottom:0,
-    borderTopWidth:1,
-    borderTopColor:'black',
-    height: 100, 
+    bottom: 0,
+    borderTopWidth: 1,
+    borderTopColor: 'black',
+    height: 100,
     left: 0,
     right: 0,
   },
 
-  cancelbutton:{
+  cancelbutton: {
     position: 'absolute',
-    left:40,
-    top:35,
-
+    left: 40,
+    top: 35,
   },
-  canceltext:{
-    fontSize:20,
-    fontFamily:'Urbanist-Bold',
-    color:'black',
-
+  canceltext: {
+    fontSize: 20,
+    fontFamily: 'Urbanist-Bold',
+    color: 'black',
   },
   applyButton: {
     backgroundColor: '#122C3E',
@@ -182,8 +182,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    left:140,
-    top:20,
+    left: 140,
+    top: 20,
   },
   applyButtonText: {
     color: 'white',
