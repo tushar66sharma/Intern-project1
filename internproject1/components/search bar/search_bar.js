@@ -18,7 +18,7 @@ export const Search = () => {
 
   return (
     <SafeAreaView style={styles.searchContainer}>
-      <TextInput placeholder="Search" style={styles.searchBox} />
+      <TextInput placeholder="Search" placeholderTextColor={'black'}   style={styles.searchBox} />
       <Image
         source={searchimage}
         resizeMode={'contain'}
@@ -64,10 +64,10 @@ const styles = StyleSheet.create({
     top: 27,
   },
   filterimage: {
-    height: 35,
-    width: 20,
+    height: 45,
+    width: 30,
     position: 'absolute',
     right: 40,
-    top:-7,
+    top:-12,
   },
 });
